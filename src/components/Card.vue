@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <ul>
-      <li>Titolo: {{ info.Titolo }}</li>
+      <li>Titolo: {{ info.title }}</li>
       <li>Titolo.Originale: {{ info.original_title }}</li>
       <li>Lingua: {{ info.language }}</li>
       <li>Voto: {{ info.vote_avarage }}</li>

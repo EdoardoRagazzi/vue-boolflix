@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @ricerca="ricercaFilm" />
-    <Main :films="filmsArray" />
+    <Main :films="filmsArray" :campoRicerca="searchText" />
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
           },
         })
         .then((response) => {
-          this.filmsArray.push(response.data.results);
+          this.filmsArray = response.data.results;
           console.log(this.filmsArray);
         });
 
@@ -48,12 +48,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/style/common.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: grey;
 }
 </style>

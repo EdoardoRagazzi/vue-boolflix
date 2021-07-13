@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h2>Hai Cercato:</h2>
+    <h2>Hai Cercato: {{ campoRicerca }}</h2>
     <Card v-for="film in films" :key="film.id" :info="film" />
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   },
   props: {
     films: Array,
+    campoRicerca: String,
   },
 };
 </script>

@@ -1,20 +1,16 @@
 <template>
   <div class="header">
-    <div class="input-group mb-3">
+    <div class="input mb-3">
+      <!--INPUT CON  V-MODEL PRENDE IL DATO INSERITO MENTRE CON $EMIT MI DA LA POSSIBILITA DI PASSARE IL DATO DAL FIGLIO AL PADRE CHE IN QUESTO CASO è APP.VUE---IL VALORE DI SEARCHTEXT -->
       <input
         type="text"
-        class="form-control"
-        placeholder="Titolo FILM"
-        aria-label="Titolo FILM"
+        class="form-control mac-style"
+        placeholder="TITOLO FILM"
+        aria-label="TITOLO FILM"
         aria-describedby="button-addon2"
         v-model="searchText"
-        @keyup="$emit('ricerca', searchText)"
+        @keyup.enter="$emit('ricerca', searchText)"
       />
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        id="button-addon2"
-      ></button>
     </div>
   </div>
 </template>
@@ -32,4 +28,27 @@ export default {
 
 
 <style scoped lang="scss">
+@import "@/style/common.scss";
+
+.header {
+  background-color: indigo;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mac-style {
+  width: 150px;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+
+  text-align: center;
+}
+
+.mac-style:focus {
+  width: 460px;
+}
 </style>
