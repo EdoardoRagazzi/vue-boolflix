@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    <h1 class="text-uppercase">Boolflix</h1>
     <div class="input mb-3">
       <!--INPUT CON  V-MODEL PRENDE IL DATO INSERITO MENTRE CON $EMIT MI DA LA POSSIBILITA DI PASSARE IL DATO DAL FIGLIO AL PADRE CHE IN QUESTO CASO è APP.VUE---IL VALORE DI SEARCHTEXT -->
       <input
@@ -35,7 +36,7 @@ export default {
   height: 100px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .mac-style {
