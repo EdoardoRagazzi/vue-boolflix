@@ -1,5 +1,9 @@
 <template>
   <div class="card">
+    <img
+      :src="'https://image.tmdb.org/t/p/w300' + infoshow.poster_path"
+      alt=""
+    />
     <ul>
       <li>Titolo: {{ infoshow.name }}</li>
       <li>Titolo.Originale: {{ infoshow.original_name }}</li>
@@ -20,5 +24,8 @@ export default {
 <style scoped lang="scss">
 ul {
   list-style: none;
+}
+.card {
+  float: left;
 }
 </style>

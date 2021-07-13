@@ -29,43 +29,45 @@ export default {
   },
   methods: {
     // },
-    ricercaMoviesShows(){
-      ricercaMovies(text) {
-        this.searchText = text;
-        axios
-          .get(this.apiUrlMovies, {
-            params: {
-              api_key: this.apiKey,
-              language: this.language,
-              query: text,
-            },
-          })
-          .then((response) => {
-            this.filmsArray = response.data.results;
-            console.log(this.filmsArray);
-          });
-          console.log(text);
-      },
-        
-      
-      ricercaShows(text) 
-        this.searchText = text;
-        axios
-          .get(this.apiUrlShows, {
-            params: {
-              api_key: this.apiKey,
-              language: this.language,
-              query: text,
-            },
-          })
-          .then((response) => {
-            this.showArray = response.data.results;
-            console.log(this.showArray);
-          });
-        console.log(text);
-  },
-}
+    ricercaMoviesShows(text) {
+      this.searchText = text;
+      this.ricercaShows(text);
+      this.ricercaMovies(text);
+    },
 
+    ricercaMovies(text) {
+      axios
+        .get(this.apiUrlMovies, {
+          params: {
+            api_key: this.apiKey,
+            language: this.language,
+            query: text,
+          },
+        })
+        .then((response) => {
+          this.filmsArray = response.data.results;
+          console.log(this.filmsArray);
+        });
+      console.log(text);
+    },
+
+    ricercaShows(text) {
+      axios
+        .get(this.apiUrlShows, {
+          params: {
+            api_key: this.apiKey,
+            language: this.language,
+            query: text,
+          },
+        })
+        .then((response) => {
+          this.showArray = response.data.results;
+          console.log(this.showArray);
+        });
+      console.log(text);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h2>Hai Cercato: {{ campoRicerca }}</h2>
+    <h2 class="text-uppercase">Hai Cercato: {{ campoRicerca }}</h2>
     <div class="movies">
       <h2>Movies</h2>
       <Card v-for="film in films" :key="film.id" :infofilm="film" />
@@ -31,6 +31,7 @@ export default {
 
 
 <style scoped lang="scss">
+@import "@/style/common.scss";
 .movies {
   float: left;
 }
