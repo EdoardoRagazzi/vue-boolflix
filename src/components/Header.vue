@@ -10,8 +10,15 @@
         aria-label="TITOLO FILM"
         aria-describedby="button-addon2"
         v-model="searchText"
-        @keyup.enter="$emit('ricerca', searchText)"
       />
+      <button
+        class="btn btn-outline-secondary"
+        @click="$emit('ricerca', searchText)"
+        type="button"
+      >
+        ENTER
+      </button>
+      <!-- @keyup.enter="$emit('ricerca', searchText)" -->
     </div>
   </div>
 </template>
@@ -40,6 +47,8 @@ export default {
   align-items: center;
 }
 .mac-style {
+  vertical-align: middle;
+  display: inline-block;
   width: 150px;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
