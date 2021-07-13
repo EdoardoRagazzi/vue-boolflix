@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card col-3">
     <img
       :src="'https://image.tmdb.org/t/p/w500' + infofilm.poster_path"
       alt=""
@@ -22,11 +22,11 @@ export default {
 
 
 <style scoped lang="scss">
+@import "@/style/common.scss";
 ul {
   list-style: none;
 }
 .card {
-  float: left;
   height: 300px;
   width: 300px;
   img {
