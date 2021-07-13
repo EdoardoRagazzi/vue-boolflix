@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @searchMovies="ricercaMovies" @searchShows="ricercaShows" />
+    <Header @searchMoviesShows="ricercaMoviesShows" />
     <Main :films="filmsArray" :campoRicerca="searchText" :tvshows="showArray" />
   </div>
 </template>
@@ -29,42 +29,43 @@ export default {
   },
   methods: {
     // },
-    ricercaMovies(text) {
-      this.searchText = text;
-      axios
-        .get(this.apiUrlMovies, {
-          params: {
-            api_key: this.apiKey,
-            language: this.language,
-            query: text,
-          },
-        })
-        .then((response) => {
-          this.filmsArray = response.data.results;
-          console.log(this.filmsArray);
-        });
-
-      console.log(text);
-    },
-    ricercaShows(text) {
-      this.searchText = text;
-      axios
-        .get(this.apiUrlShows, {
-          params: {
-            api_key: this.apiKey,
-            language: this.language,
-            query: text,
-          },
-        })
-        .then((response) => {
-          this.showArray = response.data.results;
-          console.log(this.showArray);
-        });
-
-      console.log(text);
-    },
+    ricercaMoviesShows(){
+      ricercaMovies(text) {
+        this.searchText = text;
+        axios
+          .get(this.apiUrlMovies, {
+            params: {
+              api_key: this.apiKey,
+              language: this.language,
+              query: text,
+            },
+          })
+          .then((response) => {
+            this.filmsArray = response.data.results;
+            console.log(this.filmsArray);
+          });
+          console.log(text);
+      },
+        
+      
+      ricercaShows(text) 
+        this.searchText = text;
+        axios
+          .get(this.apiUrlShows, {
+            params: {
+              api_key: this.apiKey,
+              language: this.language,
+              query: text,
+            },
+          })
+          .then((response) => {
+            this.showArray = response.data.results;
+            console.log(this.showArray);
+          });
+        console.log(text);
   },
-};
+}
+
 </script>
 
 <style lang="scss" scoped>

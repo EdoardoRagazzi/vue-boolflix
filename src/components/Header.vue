@@ -10,11 +10,11 @@
         aria-label="TITOLO FILM"
         aria-describedby="button-addon2"
         v-model="searchText"
-        @keyup.enter="$emit('searchMovies', searchText)"
+        @keyup.enter="$emit('searchMovies&Shows', searchText)"
       />
       <button
         class="btn btn-outline-secondary"
-        @click="$emit('searchShows', searchText)"
+        @click="$emit('searchMovies&Shows', searchText)"
         type="button"
       >
         ENTER
