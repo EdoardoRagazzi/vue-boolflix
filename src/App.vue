@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header @ricerca="ricercaFilm" />
-    <Main :films="filmsArray" :campoRicerca="searchText" />
+    <Header @searchMovies="ricercaMovies" @searchShows="ricercaShows" />
+    <Main :films="filmsArray" :campoRicerca="searchText" :tvshows="showArray" />
   </div>
 </template>
 
@@ -19,17 +19,20 @@ export default {
   data() {
     return {
       apiKey: "8b05b374941d56adfa82388d6d98149a",
-      apiUrl: "https://api.themoviedb.org/3/search/movie",
+      apiUrlMovies: "https://api.themoviedb.org/3/search/movie",
+      apiUrlShows: "https://api.themoviedb.org/3/search/tv",
       language: "it-IT",
       filmsArray: [],
+      showArray: [],
       searchText: "",
     };
   },
   methods: {
-    ricercaFilm(text) {
+    // },
+    ricercaMovies(text) {
       this.searchText = text;
       axios
-        .get(this.apiUrl, {
+        .get(this.apiUrlMovies, {
           params: {
             api_key: this.apiKey,
             language: this.language,
@@ -39,6 +42,23 @@ export default {
         .then((response) => {
           this.filmsArray = response.data.results;
           console.log(this.filmsArray);
+        });
+
+      console.log(text);
+    },
+    ricercaShows(text) {
+      this.searchText = text;
+      axios
+        .get(this.apiUrlShows, {
+          params: {
+            api_key: this.apiKey,
+            language: this.language,
+            query: text,
+          },
+        })
+        .then((response) => {
+          this.showArray = response.data.results;
+          console.log(this.showArray);
         });
 
       console.log(text);

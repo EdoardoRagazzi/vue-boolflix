@@ -1,10 +1,10 @@
 <template>
   <div class="card">
     <ul>
-      <li>Titolo: {{ info.title }}</li>
-      <li>Titolo.Originale: {{ info.original_title }}</li>
-      <li>Lingua: {{ info.original_language }}</li>
-      <li>Voto: {{ info.vote_average }}</li>
+      <li>Titolo: {{ infoshow.name }}</li>
+      <li>Titolo.Originale: {{ infoshow.original_name }}</li>
+      <li>Lingua: {{ infoshow.original_language }}</li>
+      <li>Voto: {{ infoshow.vote_average }}</li>
     </ul>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script>
 export default {
   name: "Card",
-  props: ["info"],
+  props: ["infoshow"],
 };
 </script>
 

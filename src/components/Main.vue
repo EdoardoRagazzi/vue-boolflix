@@ -3,11 +3,11 @@
     <h2>Hai Cercato: {{ campoRicerca }}</h2>
     <div class="movies">
       <h2>Movies</h2>
-      <Card v-for="film in films" :key="film.id" :info="film" />
+      <Card v-for="film in films" :key="film.id" :infofilm="film" />
     </div>
     <div class="tv-show">
       <h2>Tv-show</h2>
-      <Cardshow v-for="film in films" :key="film.id" :info="film" />
+      <Cardshow v-for="show in tvshows" :key="show.id" :infoshow="show" />
     </div>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
     Cardshow,
   },
   props: {
+    tvshows: Array,
     films: Array,
     campoRicerca: String,
   },
