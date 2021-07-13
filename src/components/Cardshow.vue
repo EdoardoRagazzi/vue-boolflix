@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <img
-      :src="'https://image.tmdb.org/t/p/w300' + infoshow.poster_path"
+      :src="'https://image.tmdb.org/t/p/w500' + infoshow.poster_path"
       alt=""
     />
     <ul>
@@ -27,5 +27,11 @@ ul {
 }
 .card {
   float: left;
+  height: 400px;
+  width: 300px;
+  img {
+    height: 60%;
+    background-size: cover;
+  }
 }
 </style>
