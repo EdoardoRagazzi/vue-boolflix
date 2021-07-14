@@ -45,6 +45,10 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  h1 {
+    color: rgb(148, 29, 29);
+    font-weight: 900;
+  }
 }
 .mac-style {
   vertical-align: middle;
