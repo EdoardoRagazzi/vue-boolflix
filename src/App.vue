@@ -48,7 +48,6 @@ export default {
           this.filmsArray = response.data.results;
           console.log(this.filmsArray);
         });
-      console.log(text);
     },
 
     ricercaShows(text) {
@@ -64,7 +63,6 @@ export default {
           this.showArray = response.data.results;
           console.log(this.showArray);
         });
-      console.log(text);
     },
   },
 };

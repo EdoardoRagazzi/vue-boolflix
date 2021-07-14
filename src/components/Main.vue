@@ -1,25 +1,22 @@
 <template>
   <div class="main">
-    <h2 class="text-uppercase">Hai Cercato: {{ campoRicerca }}</h2>
-    <div class="movies d-flex row">
-      <h2>Movies</h2>
-      <Card v-for="film in films" :key="film.id" :infofilm="film" />
+    <h2 class="text-uppercase">Search: {{ campoRicerca }}</h2>
+    <div class="card d-flex flex-row">
+      <Card v-for="film in films" :key="film.id" :info="film" />
     </div>
-    <div class="tv-show d-flex row">
-      <h2>Tv-show</h2>
-      <Cardshow v-for="show in tvshows" :key="show.id" :infoshow="show" />
+    <div class="card d-flex flex-row">
+      <Card v-for="show in tvshows" :key="show.id" :info="show" />
     </div>
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import Cardshow from "@/components/Cardshow.vue";
+
 export default {
   name: "Main",
   components: {
     Card,
-    Cardshow,
   },
   props: {
     tvshows: Array,
@@ -33,13 +30,10 @@ export default {
 <style scoped lang="scss">
 @import "@/style/common.scss";
 .main {
-  width: 70%;
+  width: 80%;
   margin: auto;
 }
-.movies {
-  float: left;
-}
-.tv-show {
-  float: right;
+.card {
+  flex-wrap: wrap;
 }
 </style>

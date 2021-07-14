@@ -1,14 +1,11 @@
 <template>
-  <div class="card col-3">
-    <img
-      :src="'https://image.tmdb.org/t/p/w500' + infofilm.poster_path"
-      alt=""
-    />
+  <div class="card col-2">
+    <img :src="'https://image.tmdb.org/t/p/w500' + info.poster_path" alt="" />
     <ul>
-      <li>Titolo: {{ infofilm.title }}</li>
-      <li>Titolo.Originale: {{ infofilm.original_title }}</li>
-      <li>Lingua: {{ infofilm.original_language }}</li>
-      <li>Voto: {{ infofilm.vote_average }}</li>
+      <li>Titolo: {{ info.title || info.name }}</li>
+      <li>Titolo.Originale: {{ info.original_title || info.original_name }}</li>
+      <li>Lingua: {{ info.original_language }}</li>
+      <li>Voto: {{ info.vote_average }}</li>
     </ul>
   </div>
 </template>
@@ -16,7 +13,7 @@
 <script>
 export default {
   name: "Card",
-  props: ["infofilm"],
+  props: ["info"],
 };
 </script>
 
@@ -27,8 +24,8 @@ ul {
   list-style: none;
 }
 .card {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 350px;
   img {
     height: 60%;
     background-size: 100% 100%;
