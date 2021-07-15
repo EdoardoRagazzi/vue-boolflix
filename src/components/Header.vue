@@ -6,7 +6,7 @@
       <input
         type="text"
         class="form-control mac-style"
-        placeholder="TITOLO FILM"
+        placeholder="SEARCH"
         aria-label="TITOLO FILM"
         aria-describedby="button-addon2"
         v-model="searchText"

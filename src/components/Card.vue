@@ -106,11 +106,14 @@ ul {
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;
-    font-size: 1%;
+
     overflow: hidden;
     text-overflow: ellipsis;
     background-color: #141414;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    li {
+      font-size: 0.6em;
+    }
   }
 }
 .id:hover .overlay {
