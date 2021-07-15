@@ -22,7 +22,14 @@
           <li v-else>
             <strong>Lingua: {{ info.original_language }}</strong>
           </li>
-          <li>Voto: {{ info.vote_average }}</li>
+          <li>
+            Voto: {{ vote }}
+            <i
+              v-for="(star, index) in this.vote"
+              :key="index"
+              class="bi bi-star-fill purple"
+            ></i>
+          </li>
         </ul>
       </div>
     </div>
@@ -36,7 +43,19 @@ export default {
   data() {
     return {
       flags: ["en", "it"],
+      vote: "",
     };
+  },
+  mounted() {
+    this.function();
+  },
+  methods: {
+    function() {
+      const numerodecimale = Math.floor(this.info.vote_average / 2);
+      this.info.vote_avarage = numerodecimale;
+      console.log(numerodecimale);
+      this.vote = numerodecimale;
+    },
   },
 };
 </script>
@@ -44,6 +63,7 @@ export default {
 
 <style scoped lang="scss">
 @import "@/style/common.scss";
+
 ul {
   list-style: none;
 }
@@ -66,7 +86,7 @@ ul {
   .overlay {
     position: absolute;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -76,6 +96,7 @@ ul {
     opacity: 0;
     transition: 0.5s ease;
     background-color: #141414;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
 .id:hover .overlay {
@@ -86,11 +107,14 @@ ul {
   color: white;
   font-size: 20px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+.purple {
+  color: purple;
 }
 </style>
