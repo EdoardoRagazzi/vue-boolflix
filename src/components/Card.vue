@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-2" :class="info">
+  <div class="card col-3" :class="info">
     <img :src="'https://image.tmdb.org/t/p/w500' + info.poster_path" alt="" />
     <div class="overlay">
       <div class="text">
@@ -68,9 +68,10 @@ ul {
   list-style: none;
 }
 .card {
-  height: 400px;
-  width: 350px;
+  height: 550px;
+  width: 100%;
   border-radius: 10px;
+
   position: relative;
   img {
     display: block;

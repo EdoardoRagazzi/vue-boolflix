@@ -32,7 +32,7 @@ export default {
 @import "@/style/common.scss";
 
 .main {
-  width: 80%;
+  width: 90%;
   margin: auto;
   color: #4b0082;
   padding: 50px;
@@ -40,5 +40,7 @@ export default {
 .card {
   flex-wrap: wrap;
   background-color: #141414;
+  border: none;
+  padding: 10px;
 }
 </style>

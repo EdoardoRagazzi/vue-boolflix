@@ -17,7 +17,7 @@
         @click="$emit('searchMoviesShows', searchText)"
         type="button"
       >
-        ENTER
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </div>
