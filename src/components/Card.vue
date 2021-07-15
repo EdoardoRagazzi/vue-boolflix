@@ -23,6 +23,9 @@
             <strong>Lingua: {{ info.original_language }}</strong>
           </li>
           <li>
+            <p>Overview: {{ info.overview }}</p>
+          </li>
+          <li>
             Voto: {{ vote }}
             <i
               v-for="(star, index) in this.vote"
@@ -63,7 +66,12 @@ export default {
 
 <style scoped lang="scss">
 @import "@/style/common.scss";
-
+p {
+  font-size: x-small;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 ul {
   list-style: none;
 }
@@ -71,6 +79,7 @@ ul {
   height: 550px;
   width: 100%;
   border-radius: 10px;
+  font-size: 1%;
 
   position: relative;
   img {
@@ -88,14 +97,18 @@ ul {
     position: absolute;
     text-align: center;
     border-radius: 8px;
+    font-size: x-small;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: 550px;
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;
+    font-size: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: #141414;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
