@@ -11,15 +11,14 @@
     </div>
   </div>
 </template>
-
 <script>
 import Card from "@/components/Card.vue";
-
 export default {
   name: "Main",
   components: {
     Card,
   },
+  // PROPS DAL PADRE
   props: {
     tvshows: Array,
     films: Array,

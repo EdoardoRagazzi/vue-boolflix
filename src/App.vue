@@ -9,7 +9,6 @@
     />
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import Header from "./components/Header.vue";
@@ -33,6 +32,7 @@ export default {
   },
   methods: {
     // },
+    // SEARCH MOVIES AND SHOWS FUNCTION WITH CALL TO AXIOS (ALL)
     ricercaMoviesShows(text) {
       this.searchText = text;
 
@@ -98,17 +98,12 @@ export default {
 //   },
 // },
 </script>
-
 <style lang="scss" scoped>
 @import "@/style/common.scss";
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   background-color: #141414;
   min-height: 100vh;
-}
-.container {
-  background-color: #141414;
 }
 </style>

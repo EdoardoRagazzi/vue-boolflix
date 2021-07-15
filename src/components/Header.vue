@@ -17,6 +17,7 @@
         @click="$emit('searchMoviesShows', searchText)"
         type="button"
       >
+        <!-- BOOTSTRAP-ICONS -->
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -34,7 +35,6 @@ export default {
 };
 </script>
 
-
 <style scoped lang="scss">
 @import "@/style/common.scss";
 
@@ -45,11 +45,15 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px white;
   h1 {
     color: rgb(148, 29, 29);
     font-weight: 900;
   }
 }
+// BARRA WIDTH / EASE-IN-OUT
 .mac-style {
   vertical-align: middle;
   display: inline-block;
@@ -61,7 +65,6 @@ export default {
 
   text-align: center;
 }
-
 .mac-style:focus {
   width: 460px;
 }
